@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'home/index'
+  get 'home/reset'
+  resources :database_nodes, constraints: { format: 'json' }, only: :index
+  resources :cache_nodes, constraints: { format: 'json' }, only: :index
 end
