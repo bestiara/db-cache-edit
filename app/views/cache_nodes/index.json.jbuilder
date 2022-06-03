@@ -1,1 +1,1 @@
-json.array! @cache_node
+json.array! @cache_nodes

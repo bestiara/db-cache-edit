@@ -1,0 +1,61 @@
+<div class="fixed-container">
+  <div
+    id="cache-tree-view"
+    class="cache-tree-view"
+    data-cache-nodes-url="<%= cache_nodes_url(format: :json) %>"
+    data-cache-node-create-url="<%= cache_nodes_url %>"
+  ></div>
+
+  <a
+      id="add-to-cache"
+      class="btn add-to-cache"
+  >
+    <<<<
+  </a>
+
+  <div
+    id="database-tree-view"
+    class="database-tree-view"
+    data-db-nodes-url="<%= database_nodes_url(format: :json) %>"
+  ></div>
+
+  <div class="button-panel">
+    <a
+      id="add-node"
+      class="btn add-node"
+      data-add-node-url="<%= cache_nodes_url %>"
+    >
+      +
+    </a>
+
+    <a
+      id="delete-node"
+      class="btn delete-node"
+      data-delete-node-url="<%= cache_nodes_url %>">
+      -
+    </a>
+
+    <a
+      id="edit-node"
+      class="btn edit-node"
+      data-edit-url="<%= cache_nodes_url %>">
+      Aa
+    </a>
+
+    <a
+      id="reset-trees"
+      class="btn reset-trees"
+      data-reset-url="<%= home_reset_url %>"
+    >
+      Reset
+    </a>
+
+    <a
+      id="apply-changes"
+      class="btn apply-changes"
+      data-apply-url="<%= apply_database_nodes_url %>"
+    >
+      Apply
+    </a>
+  </div>
+</div>

@@ -13,3 +13,51 @@
  *= require_tree .
  *= require_self
  */
+
+.fixed-container {
+    position: relative;
+    width: 800px;
+    height: 460px;
+}
+
+.cache-tree-view {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 400px;
+    border: 2px solid #395588;
+}
+
+.database-tree-view {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 400px;
+    border: 2px solid #395588;
+}
+
+.add-to-cache {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button-panel {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.btn {
+    background-color: #8aacf6;
+    border: 2px solid #395588;
+    border-radius: 5px;
+    padding: 6px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
