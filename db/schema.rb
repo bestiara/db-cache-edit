@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_30_084646) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_02_103655) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,16 +18,28 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_30_084646) do
     t.string "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "ancestry"
-    t.index ["ancestry"], name: "index_cache_nodes_on_ancestry"
+    t.integer "parent_id"
+    t.string "state"
+    t.integer "origin_id"
+    t.index ["origin_id"], name: "index_cache_nodes_on_origin_id"
+    t.index ["parent_id"], name: "index_cache_nodes_on_parent_id"
   end
 
   create_table "database_nodes", force: :cascade do |t|
     t.string "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "ancestry"
-    t.index ["ancestry"], name: "index_database_nodes_on_ancestry"
+    t.integer "parent_id"
+    t.string "state"
+    t.index ["parent_id"], name: "index_database_nodes_on_parent_id"
+  end
+
+  create_table "database_nodes_1", id: false, force: :cascade do |t|
+    t.bigserial "id", null: false
+    t.string "value"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
+    t.integer "parent_id"
   end
 
 end
