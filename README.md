@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Требования:
+* Ruby 3.0.0
+* Yarn
+* Postgres
 
-Things you may want to cover:
+Установка зависимостей:
+* bundle
+* yarn install
 
-* Ruby version
+Подготовка базы данных:
+* rails db:create
+````
+CREATE USER db_cache_edit_user WITH PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE db_cache_edit_development to db_cache_edit_user;
+````
+* rails db:migrate
+* rails db:seed
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Запуск:
+* foreman start
