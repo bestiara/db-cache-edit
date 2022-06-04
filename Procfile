@@ -1,2 +1,2 @@
-backend: rails s -p 3000
-frontend: ./bin/webpack-dev-server
+web: bundle exec puma -p $PORT
+webpacker: ./bin/webpack
