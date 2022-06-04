@@ -34,12 +34,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_103655) do
     t.index ["parent_id"], name: "index_database_nodes_on_parent_id"
   end
 
-  create_table "database_nodes_1", id: false, force: :cascade do |t|
-    t.bigserial "id", null: false
-    t.string "value"
-    t.datetime "created_at", precision: nil
-    t.datetime "updated_at", precision: nil
-    t.integer "parent_id"
-  end
-
 end

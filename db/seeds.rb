@@ -1,6 +1,5 @@
 def create_node(children, parent = nil)
   children.each do |node|
-    p node
     db_node = DatabaseNode.create!(
       value: node['value'],
       parent: parent
