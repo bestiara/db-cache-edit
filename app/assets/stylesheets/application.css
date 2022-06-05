@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require 'jstree'
+ *= require 'notyf/notyf.min.css'
  */
 
 .fixed-container {
