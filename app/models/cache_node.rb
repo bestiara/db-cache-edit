@@ -8,5 +8,8 @@ class CacheNode < ApplicationRecord
   belongs_to :parent, class_name: 'CacheNode'
   has_many :children, class_name: 'CacheNode', foreign_key: 'parent_id'
 
+  validates_with CantUpdateDisabledValidator
+  validates_with CantAddChildToDisabledValidator
+
   after_create :disable!, if: -> { parent&.disabled? }
 end

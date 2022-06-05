@@ -25,7 +25,7 @@ class CacheNodesController < ApplicationController
   end
 
   def destroy
-    @cache_node.disable_deep!
+    @cache_node.disable_deep! unless @cache_node.disabled?
     @cache_nodes = get_cache_modes_list
     render :index
   end
