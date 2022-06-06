@@ -2,6 +2,7 @@ module Disable
   def disable_deep!
     transaction do
       disable!
+      clone&.disable!
       children.each(&:disable_deep!)
     end
   end
