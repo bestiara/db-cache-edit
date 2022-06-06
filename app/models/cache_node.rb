@@ -11,5 +11,5 @@ class CacheNode < ApplicationRecord
   validates_with CantUpdateDisabledValidator
   validates_with CantAddChildToDisabledValidator
 
-  after_create :disable!, if: -> { parent&.disabled? }
+  after_create :disable_deep!, if: -> { parent&.disabled? }
 end
