@@ -37,10 +37,6 @@ class CacheDbSyncher
   end
 
   def check_errors(node)
-    return if node
-
-    unless node.errors.empty?
-      @errors << node.errors
-    end
+    @errors += node.errors
   end
 end
