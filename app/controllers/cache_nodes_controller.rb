@@ -6,7 +6,11 @@ class CacheNodesController < ApplicationController
   end
 
   def create
-    @cache_node = CacheNode.find_or_create_by(create_cache_node_params)
+    @cache_node = begin
+                    CacheNode.create(create_cache_node_params)
+                  rescue ActiveRecord::RecordNotUnique
+                    CacheNode.find_or_initialize_by(create_cache_node_params)
+                  end
 
     if @cache_node.save
       @cache_nodes = get_cache_modes_list
